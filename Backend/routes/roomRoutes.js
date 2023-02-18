@@ -14,6 +14,8 @@ router.route("/AllRooms").get(getAllRooms)
 
 router.route("/OneRoom/:id").get(getOneRoom)
 
+router.route("/AjoutRoom/:id").post(addRoom)
+
 
 router.route("/UpdateRoom/:id").put(updateRoom)
 

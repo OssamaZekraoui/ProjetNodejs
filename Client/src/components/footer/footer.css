@@ -1,0 +1,18 @@
+footer {
+    color:aliceblue ;
+    margin: 0px auto;
+    padding: 20px 0px;
+}
+
+h5{
+    font-size: 18px bold;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+    block-size: auto;
+}
+a:hover{
+    color: rgb(140, 63, 63);
+}
+li:hover {
+    color: rgb(139, 15, 15);
+}

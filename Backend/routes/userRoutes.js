@@ -14,7 +14,7 @@ router.route("/AllUsers").get(getAllUsers)
 
 router.route("/OneUser/:id").get(getOneUser)
 
-router.route("/AjoutUser").get(addUser)
+router.route("/AjoutUser").post(addUser)
 
 router.route("/UpdateUser/:id").put(updateUser)
 

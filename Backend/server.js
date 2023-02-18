@@ -1,6 +1,7 @@
 const app = require("./app")
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
+const cors = require('cors')
 
 
 //-----------PORT-----------
@@ -13,6 +14,12 @@ mongoose.connect(DB, () => {
     console.log("Database connected")
 })
 
+//--------------Cors---------------
+app.use(cors({
+    origin:"http://localhost:3000",
+    methods:"GET,POST,PUT,DELETE,OPTIONS",
+    }))
+    
 
 app.listen(PORT,()=>{
     console.log(`Server is running on ${PORT}`)

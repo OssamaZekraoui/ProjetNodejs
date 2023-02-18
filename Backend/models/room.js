@@ -26,8 +26,15 @@ const roomSchema = mongoose.Schema({
     required:false,
     trim:true
     },
+    hotel:{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"Hotel"
+    },
 
-   roomNumbers :[{ number:Number,unavailableDates : [{type:[Date]}]}] ,
+   roomNumbers : {
+      type:Number,
+      required:true
+   }
 },
    {timestamps :  true}
 )

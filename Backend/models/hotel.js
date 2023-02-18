@@ -3,61 +3,61 @@ const mongoose = require("mongoose")
 
 const hotelSchema = mongoose.Schema({
 
-   name : {
-    type:String,
-    required:true,
-    trim:true
+   title: {
+      type: String,
+      required: true,
+      trim: true
+   },
+   type: {
+      type: String,
+      required: false,
+      trim: true
    },
 
-   type : {
-    type:String,
-    required:true,
-    trim:true
+   city: {
+      type: String,
+      required: true,
+      trim: true
    },
 
-   city : {
-    type:String,
-    required:false,
-    trim:true
+   offers: {
+      type: String,
+      required: false,
+   },
+   photos: {
+      type: String,
+      required: false
    },
 
-   photos : {
-      type:[String],
+   description: {
+      type: String,
+      required: true,
+      trim: true
    },
 
-   title : {
-      type:String,
-      required:false,
-      trim:true
+   rating: {
+      type: Number,
+      min: 0,
+      max: 5
    },
 
-   description : {
-      type:String,
-      required:false,
-      trim:true
+   rooms: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Room",
+      required: false
+   }],
+
+   prixbas: {
+      type: Number,
+      required: true,
+      trim: true
    },
 
-   rating : {
-      type:Number,
-      min:0,
-      max:5
-   },
-   
-   room : {
-      type:[String], //I y a l'erreur dans ce niveau    
-   },
-
-   prixbas : {
-      type:Number,
-      required:false,
-      trim:true
-   },
-
-   featured : {
-      type:Boolean,
-      required:false,
-      trim:true
+   featured: {
+      type: Boolean,
+      required: false,
+      trim: true
    }
 })
 
-module.exports = mongoose.model('Hotel',hotelSchema)
+module.exports = mongoose.model('Hotel', hotelSchema)

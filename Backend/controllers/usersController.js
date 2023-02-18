@@ -5,11 +5,17 @@ let User = require('../models/user')
 
 //----------------GET ALL USERS-------------
 exports.getAllUsers = async (req,res,next)=>{
+    const { page = 1, limit = 6 } = req.query
     const users = await User.find()
+    .limit(limit)
+        .skip((page - 1) * limit)
+        .sort({ _id: 'desc' })
+        .exec()
+    const count = await User.countDocuments()
     res.status(200).json({
-    success:true,
-    nombre:users.length,
-    users
+        success: true,
+        totalPages: Math.ceil(count / limit),
+        users
     })
 }
 
