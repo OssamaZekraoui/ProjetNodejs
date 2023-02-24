@@ -39,25 +39,27 @@ function ShowHotel() {
 <div style={{marginLeft:'0px',paddingLeft:'0px',backgroundColor:'rgb(35, 35, 35)'}}>
       <Container className='showhotel'>
         <Row>
-          <Col><h1 className="title" style={{ paddingTop: '2rem' }}>{hotel.title}</h1></Col>
+          <Col><h1 className="title" style={{ paddingTop: '2rem' }}>{hotel.title}, {hotel.city}</h1></Col>
         </Row>
         <Row>
           <Col>
-            <Image src={"http://localhost:8800/images/" + hotel.photos} md={4} sm={12} fluid style={{ paddingTop: '2rem' }}></Image>
+            <Image src={"http://localhost:8800/images/" + hotel.photos} md={4} sm={12} fluid style={{ paddingTop: '1rem' , width:'35%'}}></Image>
           </Col>
         </Row>
         <Row>
-          <Col>
-            <p style={{ color: "gray" }}>Rating : <span style={{ color: 'yellow' }}>{hotel.rating} </span> stars</p> 
+          <Col sm={12}>
+            <p style={{ color: "gray" }}>Rating : <span style={{ color: 'yellow' }}>{hotel.rating} </span> stars; Minimum price per night : {hotel.prixbas}$</p> 
             <p >{hotel.description}</p>
           </Col>
+          <Col></Col>
         </Row>
         <Row>
           <Col>
             <h2 style={{ color: 'white' }}>What this place offers!!</h2>
             <p>{hotel.offers}</p>
           </Col>
-          <Col>
+          <Col sm={1}></Col>
+          <Col sm={2}>
             <Link to='/payement'>
               <Button variant="light">Reserve</Button>
             </Link>

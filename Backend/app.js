@@ -3,6 +3,8 @@ const app = express()
 const path = require("path")
 const cors = require("cors")
 
+
+
 //-------------cors-----------------
 app.use(cors({
     methods: "GET,POST,PUT,DELETE,OPTIONS",
@@ -27,9 +29,7 @@ app.use("/api",auth)
 const user = require("./routes/userRoutes")
 app.use("/api",user)
 
-//Rooms
-const room = require("./routes/roomRoutes")
-app.use("/api",room)
+
 
 
 
