@@ -48,6 +48,7 @@ function Header() {
         <Route path='/registration/*' element={<Registration />}></Route>
         <Route path='/:id' element={<Show />}></Route>
         <Route path='/payement' element={<Payement />}></Route>
+
       </Routes>
     </>
   );
